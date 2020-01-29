@@ -1,9 +1,9 @@
---COMENTARIO
+--COMENTARIO DDL - Definição (Estrutura) de Dados
 --CRIAR BANCO DE DADOS
-CREATE DATABASE Biblioteca_tarde;
+CREATE DATABASE Biblioteca_Tarde;
 
 -- Apontar para o banco que quero usar
-USE Biblioteca_tarde;
+USE Biblioteca_Tarde;
 
 -- CRIAR TABELAS 
 
@@ -46,18 +46,3 @@ DROP TABLE Livros;
 
 -- Excluir banco de dados
 DROP DATABASE Biblioteca_Tarde;
-
-INSERT INTO Generos (Nome)
-VALUES ('Aventura'),('Ficcao'),('Comedia'),('Suspense'),('Aventura');
-
-UPDATE Generos
-SET Nome = 'Terror'
-WHERE IdGenero = 5;
-
-INSERT INTO Autores (NomeAutor)
-VALUES ('Stephen King'),('J.K Rowling'),('George R.R. Martin'),('Mauricio de Sousa'),('Dan Brown');
-
-INSERT INTO Livros (Titulo,IdAutor,IdGenero)
-VALUES ('O Iluminado', 1,5), ('Harry Potter',2,2),('GameOfThrones',3,1),('Turma da Mônica',4,3),('Origem',5,4);
-
-TRUNCATE TABLE Livros;
