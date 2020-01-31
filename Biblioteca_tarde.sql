@@ -25,9 +25,6 @@ CREATE TABLE Livros (
 	IdGenero	INT FOREIGN KEY REFERENCES Generos (IdGenero)
 );
 
-SELECT * FROM Generos;
-SELECT * FROM Autores;
-SELECT * FROM Livros;
 
 -- ALTERAR ADICIONAR UMA NOVA COLUNA
 ALTER TABLE Generos
@@ -61,3 +58,34 @@ INSERT INTO Livros (Titulo,IdAutor,IdGenero)
 VALUES ('O Iluminado', 1,5), ('Harry Potter',2,2),('GameOfThrones',3,1),('Turma da Mônica',4,3),('Origem',5,4);
 
 TRUNCATE TABLE Livros;
+
+
+--DESAFIO
+- Selecionar todos os autores;
+SELECT * FROM Autores;
+
+
+- Selecionar todos os gêneros;
+SELECT * FROM Generos;
+
+
+- Selecionar todos os livros;
+SELECT * FROM Livros;
+
+
+- Selecionar todos os livros e seus respectivos autores;
+SELECT Titulo,IdAutor FROM Livros;
+
+
+- Selecionar todos os livros e seus respectivos gêneros;
+SELECT Titulo,IdGenero FROM Livros;
+
+
+
+- Selecionar todos os livros e seus respectivos autores e gêneros;
+SELECT Titulo,IdAutor,IdGenero FROM Livros;
+
+
+
+
+
