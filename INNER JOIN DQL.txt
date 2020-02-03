@@ -1,0 +1,42 @@
+-- SELECIONAR OS ALBUNS DO MESMO ARTISTA
+SELECT * FROM Albuns WHERE IdArtista = 4;
+
+-- USANDO INNER JOIN (JUNÇAO DE DUAS OU MAIS TABELAS
+SELECT Artistas.NomeArtista, Albuns.NomeAlbum FROM Artistas
+INNER JOIN Albuns ON Artistas.IdArtista = Albuns.IdArtista
+WHERE Albuns.IdArtista = 4;
+
+
+
+-- SELECIONAR OS ALBUNS LANÇADOS NA MESMA DATA
+SELECT * FROM Albuns WHERE DataLancamento = '2020-06-30';
+
+-- INNER JOIN
+SELECT * FROM Artistas
+INNER JOIN Albuns ON Artistas.IdArtista = Albuns.IdArtista
+WHERE DataLancamento = '2020-06-30';
+
+
+
+SELECT IdArtista, NomeAlbum, DataLancamento FROM Albuns
+ORDER BY DataLancamento DESC;
+
+-- INNER JOIN 
+SELECT Artistas.NomeArtista as NomeArtista, Albuns.NomeAlbum as NomeAlbum, DataLancamento --Atributos com apelido
+FROM Artistas 
+INNER JOIN Albuns ON Artistas.IdArtista = Albuns.IdArtista -- A primeira tabela e Ponte = ID
+ORDER BY DataLancamento ASC;
+
+
+
+-- SELECIONAR  ARTISTAS DO MESMO ESTILO MUSICAL
+SELECT IdArtista, IdEstilo FROM Albuns WHERE IdEstilo = 7;
+
+-- DESAFIO REALIZAR EXERCÍCIO
+-- COM INNER JOIN, COM 3 TABELAS
+
+SELECT Artistas.NomeArtista, EstiloMusical.NomeEstilo 
+FROM Artistas
+INNER JOIN Albuns ON Artistas.IdArtista = Albuns.IdArtista
+INNER  JOIN EstiloMusical ON Albuns.IdAlbum = EstiloMusical.IdEstilo
+WHERE EstiloMusical.IdEstilo = 8;
