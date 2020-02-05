@@ -1,0 +1,49 @@
+CREATE DATABASE Locadora_Tarde;
+
+--DDL
+
+Use Locadora_Tarde;
+
+CREATE TABLE Marca (
+	IdMarca	INT PRIMARY KEY IDENTITY,
+	Nome	VARCHAR (200) NOT NULL
+);
+
+CREATE TABLE Empresa (
+	IdEmpresa	INT PRIMARY KEY IDENTITY,
+	Nome		VARCHAR (200) NOT NULL
+);
+
+CREATE TABLE Cliente (
+	IdCliente	INT PRIMARY KEY IDENTITY,
+	Nome		VARCHAR (200) NOT NULL,
+	Cpf			CHAR (11) UNIQUE NOT NULL
+);
+
+CREATE TABLE Modelo (
+	IdModelo	INT PRIMARY KEY IDENTITY,
+	Nome		VARCHAR (200) NOT NULL,
+	IdMarca		INT FOREIGN KEY REFERENCES Marca (IdMarca)
+);
+
+CREATE TABLE Veiculos (
+	IdVeiculo	INT PRIMARY KEY IDENTITY,
+	IdModelo	INT FOREIGN KEY REFERENCES Modelo (IdModelo),
+	Placa		CHAR (7) UNIQUE NOT NULL,
+	IdEmpresa		INT FOREIGN KEY REFERENCES Empresa (IdEmpresa)
+);
+
+CREATE TABLE Aluguel (
+	IdAluguel	INT PRIMARY KEY IDENTITY,
+	IdCliente	INT FOREIGN KEY REFERENCES Cliente (IdCliente),
+	IdVeiculo	INT FOREIGN KEY REFERENCES Veiculos (IdVeiculo),
+	DataInicio	DATE,
+	DataFim		DATE
+);
+
+
+
+
+
+
+
