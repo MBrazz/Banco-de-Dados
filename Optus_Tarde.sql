@@ -106,3 +106,11 @@ SELECT * FROM Albuns WHERE IdEstilo = 7;
 
 SELECT IdArtista, NomeAlbum, DataLancamento FROM Albuns
 ORDER BY DataLancamento DESC;
+
+CREATE PROCEDURE MaisVisualizacao
+AS
+SELECT * FROM Albuns
+ORDER BY Albuns.QtdVisualizacoes;
+
+EXECUTE MaisVisualizacao
+
