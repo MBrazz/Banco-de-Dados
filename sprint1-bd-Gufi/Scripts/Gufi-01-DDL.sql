@@ -50,3 +50,11 @@ CREATE TABLE Presenca (
 
 
 
+DROP TABLE Presenca
+
+DROP TABLE Evento
+
+DROP TABLE TipoEvento
+
+
+
