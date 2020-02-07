@@ -1,5 +1,7 @@
 -- DML
 
+USE Gufi_Tarde
+
 INSERT INTO TipoUsuario (TituloTipoUsuario)
 VALUES ('Administrador'), ('Comum');
 
@@ -7,7 +9,7 @@ INSERT INTO TipoEvento (TituloTipoEvento)
 VALUES ('C#'), ('React'), ('SQL');
 
 INSERT INTO Instituicao(CNPJ, NomeFantasia, Endereco)
-VALUES ('11111111111111'), ('Escola SENAI de Informatica'), ('Alameda Barão de Limeira,538');
+VALUES ('11111111111111', 'Escola SENAI de Informatica', 'Alameda Barão de Limeira,538');
 
 INSERT INTO Usuario(NomeUsuario, Email, Senha, Genero, DataNascimento, IdTipoUsuario)
 VALUES ('Administrador', 'adm@adm.com', 'adm123', 'Não Informado', '06/02/2020', 1),
@@ -16,20 +18,28 @@ VALUES ('Administrador', 'adm@adm.com', 'adm123', 'Não Informado', '06/02/2020',
 
 
 INSERT INTO Evento (NomeEvento, DataEvento, Descricao, AcessoLivre, IdInstituicao, IdTipoEvento)
-VALUES ('Introdução ao C#', 'Ciclo de vida', 'Optimização de banco de dados'), 
-('07/02/2020', '07/02/2020', '07/02/2020'),
-('Conceitos sobre os pilares da programação orientada a objetos', 'Como ultilizar o ciclo de vida com ReactJs', 'Aplicação de índices clusterizados e não clusterizados'),
-(1, 0, 1),
-(1 ,1 ,1),
-(1 ,2 ,3);
+VALUES ('Introdução ao C#', '07/02/2020', 'Conceitos sobre os pilares da programação orientada a objetos', 1, 1, 1), 
+('Ciclo de vida', '07/02/2020', 'Como ultilizar o ciclo de vida com ReactJs', 0, 1, 2),
+('Optimização de banco de dados', '07/02/2020', 'Aplicação de índices clusterizados e não clusterizados', 1, 1, 3);
+
 
 INSERT INTO Presenca(IdUsuario, IdEvento, Situacao)
-VALUES (2, 2, 3), 
-(2, 3, 1), 
-('Agendada', 'Confirmada', 'Não Compareceu');
+VALUES (2, 2, 'Agendada'), 
+(2, 3, 'Confirmada'), 
+(3, 1, 'Não Compareceu');
 
 
 
 
+
+SELECT * FROM TipoUsuario
 
 SELECT * FROM Usuario
+
+SELECT * FROM TipoEvento
+
+SELECT * FROM Instituicao
+
+SELECT * FROM Evento
+
+SELECT * FROM Presenca

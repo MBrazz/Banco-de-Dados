@@ -10,7 +10,7 @@ CREATE TABLE TipoUsuario (
 );
 
 CREATE TABLE TipoEvento (
-	IdTipoEvento INT PRIMARY KEY
+	IdTipoEvento INT PRIMARY KEY IDENTITY
 	,TituloTipoEvento VARCHAR (255) NOT NULL UNIQUE
 );
 
@@ -48,7 +48,5 @@ CREATE TABLE Presenca (
 	,Situacao VARCHAR (255) NOT NULL
 );
 
-DROP TABLE TipoUsuario;
-DROP TABLE Usuario;
-DROP TABLE Presenca;
+
 
