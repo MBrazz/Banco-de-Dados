@@ -1,2 +1,2 @@
 # Banco-de-Dados
-Exercicios de Banco de Dados
+Exercicios em SQL de Banco de Dados
